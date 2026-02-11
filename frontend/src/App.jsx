@@ -1,7 +1,12 @@
 import { Landing1 } from './pages'
+import { ThemeProvider } from './context/ThemeContext'
 
 const App = () => {
-  return <Landing1 />
+  return (
+    <ThemeProvider>
+      <Landing1 />
+    </ThemeProvider>
+  )
 }
 
 export default App

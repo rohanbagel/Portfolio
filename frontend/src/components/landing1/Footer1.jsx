@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
 import { personalInfo } from "../../data/portfolio";
+import { useTheme } from "../../context/ThemeContext";
 
 const Footer1 = () => {
+  const { isDark } = useTheme();
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white text-black py-8 border-t-4 border-black">
+    <footer className={`py-8 border-t-4 transition-colors duration-300 ${
+      isDark ? "bg-white text-black border-black" : "bg-black text-white border-white"
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           {/* Logo */}

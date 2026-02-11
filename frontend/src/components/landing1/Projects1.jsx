@@ -1,18 +1,25 @@
 import { motion } from "framer-motion";
 import { projects } from "../../data/portfolio";
+import { useTheme } from "../../context/ThemeContext";
 
 const Projects1 = () => {
+  const { isDark } = useTheme();
+  
   return (
     <section
       id="projects"
-      className="bg-black text-white py-20 md:py-32 relative overflow-hidden"
+      className={`py-20 md:py-32 relative overflow-hidden transition-colors duration-300 ${
+        isDark ? "bg-black text-white" : "bg-white text-black"
+      }`}
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         {[...Array(10)].map((_, i) => (
           <div
             key={i}
-            className="absolute font-['Bebas_Neue'] text-[20rem] text-white leading-none whitespace-nowrap"
+            className={`absolute font-['Bebas_Neue'] text-[20rem] leading-none whitespace-nowrap ${
+              isDark ? "text-white" : "text-black"
+            }`}
             style={{ top: `${i * 250}px`, left: "-100px" }}
           >
             BUILD CREATE INNOVATE
@@ -45,7 +52,11 @@ const Projects1 = () => {
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              <div className="border-4 border-white p-6 md:p-8 lg:p-10 hover:bg-white hover:text-black transition-all duration-500">
+              <div className={`border-4 p-6 md:p-8 lg:p-10 transition-all duration-500 ${
+                isDark
+                  ? "border-white hover:bg-white hover:text-black"
+                  : "border-black hover:bg-black hover:text-white"
+              }`}>
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                   {/* Project Number */}
                   <div className="flex-shrink-0">

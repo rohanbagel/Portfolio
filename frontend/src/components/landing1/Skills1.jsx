@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { skills } from "../../data/portfolio";
+import { useTheme } from "../../context/ThemeContext";
 
 const Skills1 = () => {
+  const { isDark } = useTheme();
+  
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -16,9 +19,13 @@ const Skills1 = () => {
   };
 
   return (
-    <section id="skills" className="bg-white text-black py-20 md:py-32 relative">
+    <section id="skills" className={`py-20 md:py-32 relative transition-colors duration-300 ${
+      isDark ? "bg-white text-black" : "bg-black text-white"
+    }`}>
       {/* Diagonal Line */}
-      <div className="absolute top-0 left-0 w-full h-4 bg-black transform -skew-y-1" />
+      <div className={`absolute top-0 left-0 w-full h-4 transform -skew-y-1 ${
+        isDark ? "bg-black" : "bg-white"
+      }`} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
@@ -42,7 +49,9 @@ const Skills1 = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="border-l-4 border-black pl-6"
+            className={`border-l-4 pl-6 ${
+              isDark ? "border-black" : "border-white"
+            }`}
           >
             <h3 className="font-['Space_Mono'] text-xl uppercase tracking-widest mb-6">
               Languages
@@ -58,8 +67,14 @@ const Skills1 = () => {
                 <motion.span
                   key={skill}
                   variants={item}
-                  whileHover={{ scale: 1.1, backgroundColor: "#000", color: "#fff" }}
-                  className="font-['Space_Mono'] text-sm px-4 py-2 border-2 border-black cursor-default transition-colors"
+                  whileHover={{ 
+                    scale: 1.1, 
+                    backgroundColor: isDark ? "#000" : "#fff", 
+                    color: isDark ? "#fff" : "#000" 
+                  }}
+                  className={`font-['Space_Mono'] text-sm px-4 py-2 border-2 cursor-default transition-colors ${
+                    isDark ? "border-black" : "border-white"
+                  }`}
                 >
                   {skill}
                 </motion.span>
@@ -104,7 +119,9 @@ const Skills1 = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="border-l-4 border-black pl-6"
+            className={`border-l-4 pl-6 ${
+              isDark ? "border-black" : "border-white"
+            }`}
           >
             <h3 className="font-['Space_Mono'] text-xl uppercase tracking-widest mb-6">
               Concepts
@@ -120,8 +137,14 @@ const Skills1 = () => {
                 <motion.span
                   key={skill}
                   variants={item}
-                  whileHover={{ scale: 1.1, backgroundColor: "#000", color: "#fff" }}
-                  className="font-['Space_Mono'] text-sm px-4 py-2 border-2 border-black cursor-default transition-colors"
+                  whileHover={{ 
+                    scale: 1.1, 
+                    backgroundColor: isDark ? "#000" : "#fff", 
+                    color: isDark ? "#fff" : "#000" 
+                  }}
+                  className={`font-['Space_Mono'] text-sm px-4 py-2 border-2 cursor-default transition-colors ${
+                    isDark ? "border-black" : "border-white"
+                  }`}
                 >
                   {skill}
                 </motion.span>
@@ -133,7 +156,9 @@ const Skills1 = () => {
         {/* Decorative Corner */}
         <div className="absolute bottom-8 right-8 hidden lg:block">
           <div className="relative">
-            <div className="w-20 h-20 border-4 border-black" />
+            <div className={`w-20 h-20 border-4 ${
+              isDark ? "border-black" : "border-white"
+            }`} />
             <div className="w-20 h-20 border-4 border-red-500 absolute -top-4 -left-4" />
           </div>
         </div>

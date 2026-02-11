@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
 import { personalInfo, stats } from "../../data/portfolio";
+import { useTheme } from "../../context/ThemeContext";
 
 const Hero1 = () => {
+  const { isDark } = useTheme();
+  
   return (
     <section
       id="about"
-      className="min-h-screen bg-black text-white pt-20 md:pt-24 relative overflow-hidden"
+      className={`min-h-screen pt-20 md:pt-24 relative overflow-hidden transition-colors duration-300 ${
+        isDark ? "bg-black text-white" : "bg-white text-black"
+      }`}
     >
       {/* Grid Background */}
       <div className="absolute inset-0 opacity-10">
@@ -13,8 +18,8 @@ const Hero1 = () => {
           className="w-full h-full"
           style={{
             backgroundImage: `
-              linear-gradient(to right, white 1px, transparent 1px),
-              linear-gradient(to bottom, white 1px, transparent 1px)
+              linear-gradient(to right, ${isDark ? 'white' : 'black'} 1px, transparent 1px),
+              linear-gradient(to bottom, ${isDark ? 'white' : 'black'} 1px, transparent 1px)
             `,
             backgroundSize: "60px 60px",
           }}
@@ -44,7 +49,9 @@ const Hero1 = () => {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-white text-black py-4 px-6 mb-12 origin-left"
+          className={`py-4 px-6 mb-12 origin-left transition-colors duration-300 ${
+            isDark ? "bg-white text-black" : "bg-black text-white"
+          }`}
         >
           <p className="font-['Space_Mono'] text-lg md:text-xl uppercase tracking-widest">
             {personalInfo.role}
@@ -69,7 +76,11 @@ const Hero1 = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.7 + index * 0.1 }}
-              className="border-4 border-white p-4 md:p-6 text-center hover:bg-white hover:text-black transition-colors duration-300 group"
+              className={`border-4 p-4 md:p-6 text-center transition-colors duration-300 ${
+                isDark 
+                  ? "border-white hover:bg-white hover:text-black"
+                  : "border-black hover:bg-black hover:text-white"
+              }`}
             >
               <p className="font-['Bebas_Neue'] text-5xl md:text-6xl lg:text-7xl">
                 {stat.value}
@@ -88,12 +99,16 @@ const Hero1 = () => {
           transition={{ delay: 1 }}
           className="max-w-3xl"
         >
-          <p className="font-['Space_Mono'] text-lg md:text-xl leading-relaxed text-gray-300">
+          <p className={`font-['Space_Mono'] text-lg md:text-xl leading-relaxed ${
+            isDark ? "text-gray-300" : "text-gray-700"
+          }`}>
             {personalInfo.bio}
           </p>
           <div className="mt-6 flex items-center gap-2">
             <span className="w-4 h-4 bg-red-500"></span>
-            <p className="font-['Space_Mono'] text-sm text-gray-400">
+            <p className={`font-['Space_Mono'] text-sm ${
+              isDark ? "text-gray-400" : "text-gray-600"
+            }`}>
               {personalInfo.college}
             </p>
           </div>
@@ -120,9 +135,13 @@ const Hero1 = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
-          className="w-6 h-10 border-2 border-white rounded-full flex justify-center pt-2"
+          className={`w-6 h-10 border-2 rounded-full flex justify-center pt-2 ${
+            isDark ? "border-white" : "border-black"
+          }`}
         >
-          <div className="w-1.5 h-3 bg-white rounded-full" />
+          <div className={`w-1.5 h-3 rounded-full ${
+            isDark ? "bg-white" : "bg-black"
+          }`} />
         </motion.div>
       </motion.div>
     </section>

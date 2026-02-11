@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
 import { achievements } from "../../data/portfolio";
+import { useTheme } from "../../context/ThemeContext";
 
 const Achievements1 = () => {
+  const { isDark } = useTheme();
+  
   return (
     <section
       id="achievements"
-      className="bg-white text-black py-20 md:py-32 relative"
+      className={`py-20 md:py-32 relative transition-colors duration-300 ${
+        isDark ? "bg-white text-black" : "bg-black text-white"
+      }`}
     >
       {/* Header Bar */}
       <div className="bg-red-500 py-4 mb-16 -rotate-1">
@@ -57,11 +62,13 @@ const Achievements1 = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className={`relative p-6 md:p-8 border-4 ${
+              className={`relative p-6 md:p-8 border-4 transition-all duration-300 ${
                 achievement.highlight
                   ? "border-red-500 bg-red-500 text-white"
-                  : "border-black bg-white hover:bg-black hover:text-white"
-              } transition-all duration-300`}
+                  : isDark 
+                    ? "border-black bg-white hover:bg-black hover:text-white"
+                    : "border-white bg-black hover:bg-white hover:text-black"
+              }`}
             >
               {/* Highlight Badge */}
               {achievement.highlight && (

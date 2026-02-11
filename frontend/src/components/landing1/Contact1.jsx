@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { socialLinks, personalInfo } from "../../data/portfolio";
+import { useTheme } from "../../context/ThemeContext";
 
 const Contact1 = () => {
+  const { isDark } = useTheme();
+  
   const socials = [
     {
       name: "LinkedIn",
@@ -35,11 +38,15 @@ const Contact1 = () => {
   return (
     <section
       id="contact"
-      className="bg-black text-white py-20 md:py-32 relative overflow-hidden"
+      className={`py-20 md:py-32 relative overflow-hidden transition-colors duration-300 ${
+        isDark ? "bg-black text-white" : "bg-white text-black"
+      }`}
     >
       {/* Background Text */}
       <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-        <span className="font-['Bebas_Neue'] text-[40vw] leading-none">
+        <span className={`font-['Bebas_Neue'] text-[40vw] leading-none ${
+          isDark ? "text-white" : "text-black"
+        }`}>
           TALK
         </span>
       </div>
@@ -71,7 +78,9 @@ const Contact1 = () => {
           </p>
           <a
             href={`mailto:${socialLinks.email}`}
-            className="font-['Space_Mono'] text-2xl md:text-3xl text-red-500 hover:text-white transition-colors"
+            className={`font-['Space_Mono'] text-2xl md:text-3xl text-red-500 transition-colors ${
+              isDark ? "hover:text-white" : "hover:text-black"
+            }`}
           >
             {socialLinks.email}
           </a>
@@ -95,7 +104,11 @@ const Contact1 = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.2, rotate: 5 }}
-              className="w-20 h-20 md:w-24 md:h-24 border-4 border-white flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300"
+              className={`w-20 h-20 md:w-24 md:h-24 border-4 flex items-center justify-center transition-all duration-300 ${
+                isDark
+                  ? "border-white hover:bg-white hover:text-black"
+                  : "border-black hover:bg-black hover:text-white"
+              }`}
             >
               {social.icon}
             </motion.a>
@@ -109,7 +122,9 @@ const Contact1 = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="inline-flex items-center gap-3 border-2 border-white/30 px-6 py-3">
+          <div className={`inline-flex items-center gap-3 border-2 px-6 py-3 ${
+            isDark ? "border-white/30" : "border-black/30"
+          }`}>
             <span className="w-3 h-3 bg-red-500 animate-pulse" />
             <span className="font-['Space_Mono'] text-sm">
               {personalInfo.location}
