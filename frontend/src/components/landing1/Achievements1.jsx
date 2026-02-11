@@ -9,7 +9,7 @@ const Achievements1 = () => {
     <section
       id="achievements"
       className={`py-20 md:py-32 relative transition-colors duration-300 ${
-        isDark ? "bg-white text-black" : "bg-black text-white"
+        isDark ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
       {/* Header Bar */}
@@ -66,8 +66,8 @@ const Achievements1 = () => {
                 achievement.highlight
                   ? "border-red-500 bg-red-500 text-white"
                   : isDark 
-                    ? "border-black bg-white hover:bg-black hover:text-white"
-                    : "border-white bg-black hover:bg-white hover:text-black"
+                    ? "border-white bg-black hover:bg-white hover:text-black"
+                    : "border-black bg-white hover:bg-black hover:text-white"
               }`}
             >
               {/* Highlight Badge */}
