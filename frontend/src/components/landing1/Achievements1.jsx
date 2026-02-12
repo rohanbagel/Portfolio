@@ -8,23 +8,10 @@ const Achievements1 = () => {
   return (
     <section
       id="achievements"
-      className={`py-20 md:py-32 relative transition-colors duration-300 ${
+      className={`py-12 md:py-20 relative transition-colors duration-300 ${
         isDark ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
-      {/* Header Bar */}
-      <div className="bg-red-500 py-4 mb-16 -rotate-1">
-        <div className="flex whitespace-nowrap animate-marquee">
-          {[...Array(10)].map((_, i) => (
-            <span
-              key={i}
-              className="font-['Bebas_Neue'] text-4xl md:text-6xl text-white mx-8"
-            >
-              WINNER • CHAMPION • WINNER • CHAMPION •
-            </span>
-          ))}
-        </div>
-      </div>
 
       <style>{`
         @keyframes marquee {

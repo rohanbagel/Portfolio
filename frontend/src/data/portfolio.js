@@ -11,9 +11,9 @@ export const personalInfo = {
 
 export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/rohanbenegal/",
-  github: "https://github.com/rohanbenegal",
-  instagram: "https://instagram.com/rohanbenegal",
-  email: "rohanbenegal@email.com",
+  github: "https://github.com/rohanbagel",
+  instagram: "https://www.instagram.com/m1ghtbethatguy/",
+  email: "rohanbenegalstudy@gmail.com",
 };
 
 export const skills = {
@@ -144,6 +144,6 @@ export const achievements = [
 export const stats = {
   hackathonsWon: 6,
   nationalWins: 3,
-  projectsBuilt: 10,
+  projectsBuilt: 15,
   techStack: 15,
 };

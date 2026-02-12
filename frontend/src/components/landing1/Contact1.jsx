@@ -38,7 +38,7 @@ const Contact1 = () => {
   return (
     <section
       id="contact"
-      className={`py-20 md:py-32 relative overflow-hidden transition-colors duration-300 ${
+      className={`py-12 md:py-20 relative overflow-hidden transition-colors duration-300 ${
         isDark ? "bg-black text-white" : "bg-white text-black"
       }`}
     >

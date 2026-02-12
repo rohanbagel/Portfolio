@@ -19,7 +19,7 @@ const Skills1 = () => {
   };
 
   return (
-    <section id="skills" className={`py-20 md:py-32 relative transition-colors duration-300 ${
+    <section id="skills" className={`py-12 md:py-20 relative transition-colors duration-300 ${
       isDark ? "bg-black text-white" : "bg-white text-black"
     }`}>
       {/* Diagonal Line */}
@@ -73,7 +73,7 @@ const Skills1 = () => {
                     color: isDark ? "#000" : "#fff" 
                   }}
                   className={`font-['Space_Mono'] text-sm px-4 py-2 border-2 cursor-default transition-colors ${
-                    isDark ? "border-white" : "border-black"
+                    isDark ? "border-white text-white" : "border-black text-black"
                   }`}
                 >
                   {skill}
@@ -105,7 +105,9 @@ const Skills1 = () => {
                   key={skill}
                   variants={item}
                   whileHover={{ scale: 1.1, backgroundColor: "#ef4444", color: "#fff" }}
-                  className="font-['Space_Mono'] text-sm px-4 py-2 border-2 border-red-500 cursor-default transition-colors"
+                    className={`font-['Space_Mono'] text-sm px-4 py-2 border-2 border-red-500 cursor-default transition-colors ${
+                    isDark ? "text-red-500" : "text-red-500"
+                  }`}
                 >
                   {skill}
                 </motion.span>
@@ -143,7 +145,7 @@ const Skills1 = () => {
                     color: isDark ? "#000" : "#fff" 
                   }}
                   className={`font-['Space_Mono'] text-sm px-4 py-2 border-2 cursor-default transition-colors ${
-                    isDark ? "border-white" : "border-black"
+                    isDark ? "border-white text-white" : "border-black text-black"
                   }`}
                 >
                   {skill}

@@ -8,7 +8,7 @@ const Projects1 = () => {
   return (
     <section
       id="projects"
-      className={`py-20 md:py-32 relative overflow-hidden transition-colors duration-300 ${
+      className={`py-12 md:py-20 relative overflow-hidden transition-colors duration-300 ${
         isDark ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
@@ -22,7 +22,8 @@ const Projects1 = () => {
             }`}
             style={{ top: `${i * 250}px`, left: "-100px" }}
           >
-            BUILD CREATE INNOVATE
+            CODE SHIP REPEAT
+
           </div>
         ))}
       </div>
