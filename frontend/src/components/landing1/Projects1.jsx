@@ -100,19 +100,6 @@ const Projects1 = () => {
                     </ul>
                   </div>
 
-                  {/* Arrow */}
-                  <div className="flex-shrink-0 hidden lg:block">
-                    <motion.svg
-                      whileHover={{ x: 10 }}
-                      className="w-12 h-12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </motion.svg>
-                  </div>
                 </div>
                 {/* Links absolutely bottom right */}
                 <div className="absolute right-6 bottom-6 flex flex-col gap-3 items-end z-10">
@@ -125,8 +112,8 @@ const Projects1 = () => {
                       whileTap={{ scale: 0.95 }}
                       className={`flex items-center gap-2 font-['Space_Mono'] text-sm px-4 py-2 border-2 transition-all duration-300 w-full min-w-[170px] justify-center ${
                         isDark 
-                          ? "border-red-500 bg-red-500 text-white hover:bg-transparent hover:text-white" 
-                          : "border-red-500 bg-red-500 text-white hover:bg-transparent hover:text-black"
+                          ? "border-red-500 bg-red-500 text-white hover:bg-transparent hover:text-red-500" 
+                          : "border-red-500 bg-red-500 text-white hover:bg-transparent hover:text-red-500"
                       }`}
                     >
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -144,7 +131,7 @@ const Projects1 = () => {
                     whileTap={project.links?.github ? { scale: 0.95 } : {}}
                     className={`flex items-center gap-2 font-['Space_Mono'] text-sm px-4 py-2 border-2 transition-all duration-300 w-full min-w-[170px] justify-center ${
                       isDark
-                        ? "border-white text-white hover:bg-white hover:text-black disabled:opacity-40"
+                        ? "border-white text-white hover:bg-white hover:text-black group-hover:border-black group-hover:text-black disabled:opacity-40"
                         : "border-black text-black hover:bg-black hover:text-white disabled:opacity-40"
                     } ${!project.links?.github ? "opacity-50 pointer-events-none" : ""}`}
                     tabIndex={project.links?.github ? 0 : -1}
