@@ -116,32 +116,33 @@ const Projects1 = () => {
                 </div>
                 {/* Links absolutely bottom right */}
                 <div className="absolute right-6 bottom-6 flex flex-col gap-3 items-end z-10">
-                  <motion.a
-                    href={project.links?.live || undefined}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={project.links?.live ? { scale: 1.05 } : {}}
-                    whileTap={project.links?.live ? { scale: 0.95 } : {}}
-                    className={`flex items-center gap-2 font-['Space_Mono'] text-sm px-4 py-2 border-2 transition-all duration-300 w-full justify-center ${
-                      isDark 
-                        ? "border-red-500 bg-red-500 text-white hover:bg-transparent hover:text-white disabled:opacity-40" 
-                        : "border-red-500 bg-red-500 text-white hover:bg-transparent hover:text-black disabled:opacity-40"
-                    } ${!project.links?.live ? "opacity-50 pointer-events-none" : ""}`}
-                    tabIndex={project.links?.live ? 0 : -1}
-                  >
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                    LIVE PREVIEW
-                  </motion.a>
+                  {project.links?.live ? (
+                    <motion.a
+                      href={project.links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`flex items-center gap-2 font-['Space_Mono'] text-sm px-4 py-2 border-2 transition-all duration-300 w-full min-w-[170px] justify-center ${
+                        isDark 
+                          ? "border-red-500 bg-red-500 text-white hover:bg-transparent hover:text-white" 
+                          : "border-red-500 bg-red-500 text-white hover:bg-transparent hover:text-black"
+                      }`}
+                    >
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      LIVE PREVIEW
+                    </motion.a>
+                  ) : null}
                   <motion.a
                     href={project.links?.github || undefined}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={project.links?.github ? { scale: 1.05 } : {}}
                     whileTap={project.links?.github ? { scale: 0.95 } : {}}
-                    className={`flex items-center gap-2 font-['Space_Mono'] text-sm px-4 py-2 border-2 transition-all duration-300 w-full justify-center ${
+                    className={`flex items-center gap-2 font-['Space_Mono'] text-sm px-4 py-2 border-2 transition-all duration-300 w-full min-w-[170px] justify-center ${
                       isDark
                         ? "border-white text-white hover:bg-white hover:text-black disabled:opacity-40"
                         : "border-black text-black hover:bg-black hover:text-white disabled:opacity-40"
