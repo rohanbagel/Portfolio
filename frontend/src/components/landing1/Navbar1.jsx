@@ -28,12 +28,13 @@ const Navbar1 = () => {
           {/* Logo */}
           <motion.a
             href="#"
-            className={`font-['Bebas_Neue'] text-3xl md:text-4xl tracking-wider hover:text-red-500 transition-colors ${
+            className={`flex items-center gap-3 font-['Bebas_Neue'] text-3xl md:text-4xl tracking-wider hover:text-red-500 transition-colors ${
               isDark ? "text-white" : "text-black"
             }`}
             whileHover={{ scale: 1.05 }}
           >
-            RB.
+            <span>RB.</span>
+            <span className="text-lg md:text-xl font-['Space_Mono'] tracking-widest uppercase">Portfolio</span>
           </motion.a>
 
           {/* Desktop Navigation */}
