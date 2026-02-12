@@ -24,8 +24,9 @@ export const skills = {
     "Express.js",
     "REST APIs",
     "PostgreSQL",
-    "MySQL",
-    "SQLite",
+    "Supabase",
+    "MongoDB",
+    "Node.js",
     "NumPy",
     "Pandas",
     "Scikit-Learn",
@@ -45,13 +46,16 @@ export const projects = [
   {
     title: "NagarSetu",
     description:
-      "Smart City AI platform with IoT environmental monitoring. A comprehensive solution for urban management using real-time sensor data and machine learning for predictive analytics.",
+      "A comprehensive civic engagement platform bridging the gap between citizens and local authorities. Features real-time issue reporting, resolution tracking, and transparent communication.",
     tech: ["Python", "Machine Learning", "IoT", "Arduino", "REST APIs"],
     highlights: [
       "Real-time environmental monitoring",
       "AI-powered analytics",
       "IoT sensor integration",
     ],
+    links: {
+      github: "https://github.com/rohanbagel/Hacknova_2026",
+    },
   },
   {
     title: "LeetCode Progress Tracker",
@@ -63,6 +67,10 @@ export const projects = [
       "Goal tracking",
       "Statistics dashboard",
     ],
+    links: {
+      live: "https://leetcode-multi-track.vercel.app/",
+      github: "https://github.com/rohanbagel/Leetcode_Tracker",
+    },
   },
   {
     title: "F1 Race Prediction Model",
@@ -74,6 +82,9 @@ export const projects = [
       "Predictive modeling",
       "Performance metrics",
     ],
+    links: {
+      github: "https://github.com/rohanbagel/F1-Race-Prediction",
+    },
   },
   {
     title: "DevLMS",
@@ -85,6 +96,10 @@ export const projects = [
       "Real-time coding battles",
       "Complete LMS features",
     ],
+    links: {
+      live: "https://devlms.onrender.com",
+      github: "https://github.com/rohanbagel/DevLMS-MEGAHACKS",
+    },
   },
 ];
 
