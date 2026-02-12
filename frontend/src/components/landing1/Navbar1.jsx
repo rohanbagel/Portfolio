@@ -34,7 +34,6 @@ const Navbar1 = () => {
             whileHover={{ scale: 1.05 }}
           >
             <span>RB.</span>
-            <span className="text-lg md:text-xl font-['Space_Mono'] tracking-widest uppercase">Portfolio</span>
           </motion.a>
 
           {/* Desktop Navigation */}
