@@ -18,7 +18,7 @@ const Footer1 = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <span className="font-['Bebas_Neue'] text-4xl">
+            <span className="font-['Bebas_Neue'] text-3xl sm:text-4xl">
               {personalInfo.name.split(" ")[0][0]}
               {personalInfo.name.split(" ")[1][0]}.
             </span>
@@ -29,7 +29,7 @@ const Footer1 = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="font-['Space_Mono'] text-sm text-center"
+            className="font-['Space_Mono'] text-xs sm:text-sm text-center"
           >
             © {currentYear} {personalInfo.name}. All rights reserved.
           </motion.p>
@@ -38,7 +38,7 @@ const Footer1 = () => {
           <motion.a
             href="#"
             whileHover={{ y: -5 }}
-            className="font-['Space_Mono'] text-sm flex items-center gap-2 hover:text-red-500 transition-colors"
+            className="font-['Space_Mono'] text-xs sm:text-sm flex items-center gap-2 hover:text-red-500 transition-colors"
           >
             BACK TO TOP
             <svg

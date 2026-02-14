@@ -44,7 +44,7 @@ const Contact1 = () => {
     >
       {/* Background Text */}
       <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-        <span className={`font-['Bebas_Neue'] text-[40vw] leading-none ${
+        <span className={`font-['Bebas_Neue'] text-[50vw] sm:text-[40vw] leading-none ${
           isDark ? "text-white" : "text-black"
         }`}>
           TALK
@@ -57,9 +57,9 @@ const Contact1 = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="font-['Bebas_Neue'] text-8xl md:text-9xl lg:text-[12rem] leading-none">
+          <h2 className="font-['Bebas_Neue'] text-6xl sm:text-7xl md:text-9xl lg:text-[12rem] leading-none">
             LET'S
             <br />
             <span className="text-red-500">CONNECT</span>
@@ -71,14 +71,14 @@ const Contact1 = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <p className="font-['Space_Mono'] text-lg md:text-xl mb-4">
+          <p className="font-['Space_Mono'] text-base sm:text-lg md:text-xl mb-4">
             Always open for collaborations and new opportunities
           </p>
           <a
             href={`mailto:${socialLinks.email}`}
-            className={`font-['Space_Mono'] text-2xl md:text-3xl text-red-500 transition-colors ${
+            className={`font-['Space_Mono'] text-lg sm:text-2xl md:text-3xl text-red-500 transition-colors break-all ${
               isDark ? "hover:text-white" : "hover:text-black"
             }`}
           >
@@ -91,7 +91,7 @@ const Contact1 = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex justify-center gap-6 md:gap-12"
+          className="flex flex-wrap justify-center gap-5 sm:gap-6 md:gap-12"
         >
           {socials.map((social, index) => (
             <motion.a
@@ -104,7 +104,7 @@ const Contact1 = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.2, rotate: 5 }}
-              className={`w-20 h-20 md:w-24 md:h-24 border-4 flex items-center justify-center transition-all duration-300 ${
+              className={`w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border-4 flex items-center justify-center transition-all duration-300 ${
                 isDark
                   ? "border-white hover:bg-white hover:text-black"
                   : "border-black hover:bg-black hover:text-white"
@@ -120,13 +120,13 @@ const Contact1 = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-12 md:mt-16"
         >
           <div className={`inline-flex items-center gap-3 border-2 px-6 py-3 ${
             isDark ? "border-white/30" : "border-black/30"
           }`}>
             <span className="w-3 h-3 bg-red-500 animate-pulse" />
-            <span className="font-['Space_Mono'] text-sm">
+            <span className="font-['Space_Mono'] text-xs sm:text-sm">
               {personalInfo.location}
             </span>
           </div>

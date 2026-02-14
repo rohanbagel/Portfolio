@@ -29,16 +29,16 @@ const Hero1 = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
         {/* Large Name and Resume Buttons - Above Role Bar */}
-        <div className="flex justify-between items-end gap-8 mb-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-8 mb-8">
           {/* Large Name */}
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="font-['Bebas_Neue'] text-[15vw] md:text-[12vw] lg:text-[10vw] leading-none tracking-tight">
+            <h1 className="font-['Bebas_Neue'] text-[18vw] sm:text-[16vw] md:text-[12vw] lg:text-[10vw] leading-none tracking-tight">
               {personalInfo.name.split(" ")[0]}
               <br />
               <span className="text-red-500">
@@ -52,11 +52,11 @@ const Hero1 = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="flex gap-3"
+            className="flex flex-col gap-3 sm:flex-row"
           >
             <button
               onClick={() => setShowResumeModal(true)}
-              className={`px-6 py-3 border-2 font-['Space_Mono'] text-sm md:text-base uppercase tracking-widest transition-all duration-300 whitespace-nowrap ${
+              className={`w-full sm:w-auto px-5 py-2.5 md:px-6 md:py-3 border-2 font-['Space_Mono'] text-xs sm:text-sm md:text-base uppercase tracking-widest text-center transition-all duration-300 whitespace-nowrap ${
                 isDark
                   ? "border-white text-white hover:bg-white hover:text-black"
                   : "border-black text-black hover:bg-black hover:text-white"
@@ -67,7 +67,7 @@ const Hero1 = () => {
             <a
               href="/resume.pdf"
               download
-              className={`px-6 py-3 border-2 font-['Space_Mono'] text-sm md:text-base uppercase tracking-widest transition-all duration-300 whitespace-nowrap ${
+              className={`w-full sm:w-auto px-5 py-2.5 md:px-6 md:py-3 border-2 font-['Space_Mono'] text-xs sm:text-sm md:text-base uppercase tracking-widest text-center transition-all duration-300 whitespace-nowrap ${
                 isDark
                   ? "border-red-500 text-red-500 hover:bg-red-500 hover:text-black"
                   : "border-red-500 text-red-500 hover:bg-red-500 hover:text-white"
@@ -83,11 +83,11 @@ const Hero1 = () => {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className={`py-4 px-6 mb-12 origin-left transition-colors duration-300 ${
+          className={`py-3 px-4 sm:px-6 mb-10 md:mb-12 origin-left transition-colors duration-300 ${
             isDark ? "bg-white text-black" : "bg-black text-white"
           }`}
         >
-          <p className="font-['Space_Mono'] text-lg md:text-xl uppercase tracking-widest">
+          <p className="font-['Space_Mono'] text-base sm:text-lg md:text-xl uppercase tracking-widest">
             {personalInfo.role}
           </p>
         </motion.div>
@@ -97,7 +97,7 @@ const Hero1 = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-10 md:mb-12"
         >
           {[
             { value: stats.hackathonsWon, label: "HACKATHONS WON" },
@@ -109,16 +109,16 @@ const Hero1 = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.7 + index * 0.1 }}
-              className={`border-4 p-4 md:p-6 text-center transition-colors duration-300 ${
+              className={`border-4 p-3 sm:p-4 md:p-6 text-center transition-colors duration-300 ${
                 isDark 
                   ? "border-white hover:bg-white hover:text-black"
                   : "border-black hover:bg-black hover:text-white"
               }`}
             >
-              <p className="font-['Bebas_Neue'] text-5xl md:text-6xl lg:text-7xl">
+              <p className="font-['Bebas_Neue'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
                 {stat.value}
               </p>
-              <p className="font-['Space_Mono'] text-xs md:text-sm mt-2">
+              <p className="font-['Space_Mono'] text-[10px] sm:text-xs md:text-sm mt-2">
                 {stat.label}
               </p>
             </motion.div>
@@ -132,7 +132,7 @@ const Hero1 = () => {
           transition={{ delay: 1 }}
           className="max-w-3xl"
         >
-          <p className={`font-['Space_Mono'] text-lg md:text-xl leading-relaxed ${
+          <p className={`font-['Space_Mono'] text-base sm:text-lg md:text-xl leading-relaxed ${
             isDark ? "text-gray-300" : "text-gray-700"
           }`}>
             {personalInfo.bio}

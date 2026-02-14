@@ -29,18 +29,18 @@ const Achievements1 = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-12 md:mb-16"
         >
-          <h2 className="font-['Bebas_Neue'] text-8xl md:text-9xl lg:text-[12rem] leading-none">
+          <h2 className="font-['Bebas_Neue'] text-6xl sm:text-7xl md:text-9xl lg:text-[12rem] leading-none">
             WINS
           </h2>
-          <p className="font-['Space_Mono'] text-xl uppercase tracking-widest mt-4">
+          <p className="font-['Space_Mono'] text-base sm:text-lg md:text-xl uppercase tracking-widest mt-3 md:mt-4">
             Achievements & Recognition
           </p>
         </motion.div>
 
         {/* Achievements Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {achievements.map((achievement, index) => (
             <motion.div
               key={achievement.title}
@@ -49,7 +49,7 @@ const Achievements1 = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className={`relative p-6 md:p-8 border-4 transition-all duration-300 ${
+              className={`relative p-5 sm:p-6 md:p-8 border-4 transition-all duration-300 ${
                 achievement.highlight
                   ? "border-red-500 bg-red-500 text-white"
                   : isDark 
@@ -66,14 +66,14 @@ const Achievements1 = () => {
 
               {/* Content */}
               <div className="flex items-start gap-4">
-                <span className="font-['Bebas_Neue'] text-5xl opacity-30">
+                <span className="font-['Bebas_Neue'] text-4xl sm:text-5xl opacity-30">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <h3 className="font-['Bebas_Neue'] text-2xl md:text-3xl mb-2">
+                  <h3 className="font-['Bebas_Neue'] text-xl sm:text-2xl md:text-3xl mb-2">
                     {achievement.title}
                   </h3>
-                  <p className="font-['Space_Mono'] text-sm uppercase tracking-wider opacity-70">
+                  <p className="font-['Space_Mono'] text-xs sm:text-sm uppercase tracking-wider opacity-70">
                     {achievement.level}
                   </p>
                 </div>
@@ -87,19 +87,19 @@ const Achievements1 = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-16 flex flex-wrap justify-center gap-8 md:gap-16"
+          className="mt-12 md:mt-16 flex flex-wrap justify-center gap-8 md:gap-16"
         >
           <div className="text-center">
-            <p className="font-['Bebas_Neue'] text-7xl md:text-8xl">6</p>
-            <p className="font-['Space_Mono'] text-sm uppercase">
+            <p className="font-['Bebas_Neue'] text-6xl sm:text-7xl md:text-8xl">6</p>
+            <p className="font-['Space_Mono'] text-xs sm:text-sm uppercase">
               Total Hackathon Wins
             </p>
           </div>
           <div className="text-center">
-            <p className="font-['Bebas_Neue'] text-7xl md:text-8xl text-red-500">
+            <p className="font-['Bebas_Neue'] text-6xl sm:text-7xl md:text-8xl text-red-500">
               3
             </p>
-            <p className="font-['Space_Mono'] text-sm uppercase">
+            <p className="font-['Space_Mono'] text-xs sm:text-sm uppercase">
               National Level
             </p>
           </div>
