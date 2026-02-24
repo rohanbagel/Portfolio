@@ -1,11 +1,17 @@
-import { Landing1 } from './pages'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Landing1, ChessPage } from './pages'
 import { ThemeProvider } from './context/ThemeContext'
 
 const App = () => {
   return (
-    <ThemeProvider>
-      <Landing1 />
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider>
+        <Routes>
+          <Route path="/" element={<Landing1 />} />
+          <Route path="/chess" element={<ChessPage />} />
+        </Routes>
+      </ThemeProvider>
+    </BrowserRouter>
   )
 }
 

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
 
 const Navbar1 = () => {
@@ -12,6 +13,7 @@ const Navbar1 = () => {
     { label: "PROJECTS", href: "#projects" },
     { label: "ACHIEVEMENTS", href: "#achievements" },
     { label: "CONTACT", href: "#contact" },
+    { label: "PLAY CHESS", href: "/chess", isRoute: true },
   ];
 
   return (
@@ -38,21 +40,40 @@ const Navbar1 = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.label}
-                href={item.href}
-                className={`font-['Space_Mono'] text-sm hover:text-red-500 transition-colors relative group ${
-                  isDark ? "text-white" : "text-black"
-                }`}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-1 bg-red-500 group-hover:w-full transition-all duration-300" />
-              </motion.a>
-            ))}
+            {navItems.map((item, index) =>
+              item.isRoute ? (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link
+                    to={item.href}
+                    className={`font-['Space_Mono'] text-sm hover:text-red-500 transition-colors relative group ${
+                      isDark ? "text-white" : "text-black"
+                    }`}
+                  >
+                    {item.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-1 bg-red-500 group-hover:w-full transition-all duration-300" />
+                  </Link>
+                </motion.div>
+              ) : (
+                <motion.a
+                  key={item.label}
+                  href={item.href}
+                  className={`font-['Space_Mono'] text-sm hover:text-red-500 transition-colors relative group ${
+                    isDark ? "text-white" : "text-black"
+                  }`}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-1 bg-red-500 group-hover:w-full transition-all duration-300" />
+                </motion.a>
+              )
+            )}
           </div>
 
 
@@ -99,18 +120,31 @@ const Navbar1 = () => {
         }`}
       >
         <div className="px-4 py-4 space-y-4">
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className={`block font-['Space_Mono'] text-lg hover:text-red-500 transition-colors ${
-                isDark ? "text-white" : "text-black"
-              }`}
-              onClick={() => setIsOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) =>
+            item.isRoute ? (
+              <Link
+                key={item.label}
+                to={item.href}
+                className={`block font-['Space_Mono'] text-lg hover:text-red-500 transition-colors ${
+                  isDark ? "text-white" : "text-black"
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.label}
+                href={item.href}
+                className={`block font-['Space_Mono'] text-lg hover:text-red-500 transition-colors ${
+                  isDark ? "text-white" : "text-black"
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </a>
+            )
+          )}
         </div>
       </motion.div>
     </motion.nav>
